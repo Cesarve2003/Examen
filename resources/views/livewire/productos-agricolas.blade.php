@@ -48,7 +48,7 @@
         </div>
 
         <div>
-            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Guardar</button>
+            <button type="submit" class="bg-green-600 text-black  *:">Guardar</button>
         </div>
     </form>
 
@@ -59,24 +59,36 @@
     <table class="min-w-full bg-white border">
         <thead>
             <tr>
+                <th class="py-2 px-4 border">ID</th>
                 <th class="py-2 px-4 border">Nombre</th>
+                <th class="py-2 px-4 border">Variedad</th>
                 <th class="py-2 px-4 border">Origen</th>
+                <th class="py-2 px-4 border">Fecha de Cosecha</th>
                 <th class="py-2 px-4 border">Peso (kg)</th>
                 <th class="py-2 px-4 border">Precio/kg</th>
+                <th class="py-2 px-4 border">Calidad</th>
                 <th class="py-2 px-4 border">Acciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach($productos as $producto)
                 <tr>
+                    <td class="py-2 px-4 border">{{ $producto->id }}</td>
                     <td class="py-2 px-4 border">{{ $producto->nombre }}</td>
+                    <td class="py-2 px-4 border">{{ $producto->variedad }}</td>
                     <td class="py-2 px-4 border">{{ $producto->origen }}</td>
+                    <td class="py-2 px-4 border">{{ $producto->fecha_cosecha }}</td>
                     <td class="py-2 px-4 border">{{ $producto->peso }}</td>
                     <td class="py-2 px-4 border">{{ $producto->precio_kilo }}</td>
+                    <td class="py-2 px-4 border">{{ $producto->calidad }}</td>
                     <td class="py-2 px-4 border">
                         <button wire:click="eliminar({{ $producto->id }})" class="bg-red-500 text-black px-4 py-2 rounded">
                             Eliminar
                         </button>
+                        <button wire:click="editar({{ $producto->id }})" class="bg-yellow-500 text-black px-4 py-2 rounded ml-2">
+                           Editar
+                         </button>
+
                     </td>
                 </tr>
             @endforeach
