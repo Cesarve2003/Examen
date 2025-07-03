@@ -48,7 +48,7 @@
         </div>
 
         <div>
-            <button type="submit" class="bg-green-600 text-black  *:">Guardar</button>
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-black font-semibold py-2 px-4 rounded-lg shadow-md transition duration-200*:" >Guardar</button>
         </div>
     </form>
 
